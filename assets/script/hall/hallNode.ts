@@ -1,19 +1,42 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, Prefab, Label, instantiate } from "cc";
+import globalMgr from "../common/globalMgr";
 const { ccclass, property } = _decorator;
 
-@ccclass('hallNode')
+@ccclass("hallNode")
 export class hallNode extends Component {
-    start() {
+  @property(Label)
+  idLabl: Label;
+  @property(Label)
+  nickNameLabel: Label;
+  @property(Label)
+  houseCardCount: Label;
+  @property(Prefab)
+  createRoomPrefab: Prefab
+  onLoad() {
+    this.init();
+  }
+  start() {}
 
-    }
+  update(deltaTime: number) {}
+  init() {
+    console.log("这不是在初始化");
+    this.idLabl.string = "ID:" + globalMgr.userData._id;
+    this.nickNameLabel.string = "" + globalMgr.userData._nickName;
+    this.houseCardCount.string = "" + globalMgr.userData._houseCardCount;
+  }
 
-    update(deltaTime: number) {
-        
+  onButtonClick(event, custom) {
+    switch (custom) {
+      case "create":
+        console.log('创建房间')
+        let createNode = instantiate(this.createRoomPrefab)
+        this.node.addChild(createNode)
+        break;
+      case "join":
+        console.log('加入房间')
+        break;
+      case "":
+        break;
     }
-    
-    onButtonClick(event, custom) {
-        
-    }
+  }
 }
-
-

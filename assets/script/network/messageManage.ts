@@ -14,12 +14,12 @@ class MessageMgr {
               self._ws = ws
             }
         
-            ws.onmessage =  (data) => {
+            ws.onmessage =function  (data) {
               console.log("Received Message: " + data.data)
               let message = JSON.parse(data.data)
               let type = message.type
               let messageData = message.data
-              this.rspMessage(type,messageData)
+              self.rspMessage(type,messageData)
               ws.close()
             }
         
@@ -42,6 +42,7 @@ class MessageMgr {
     senLoginMsg(id: number) {
         return new Promise((reslove,reject) => {
             this.sendMsg('login', id, (result) => {
+                console.log('进来了——————')
                 if(result.err) {
                     reject(result.err)
                 } else {

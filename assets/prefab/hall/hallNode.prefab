@@ -465,7 +465,7 @@
     "component": "",
     "_componentId": "fa425NzcWFCSa1KhKTPJvQz",
     "handler": "onButtonClick",
-    "customEventData": ""
+    "customEventData": "create"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -802,7 +802,7 @@
     "component": "",
     "_componentId": "fa425NzcWFCSa1KhKTPJvQz",
     "handler": "onButtonClick",
-    "customEventData": ""
+    "customEventData": "join"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1743,7 +1743,7 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": -889.533,
+      "x": -175.186,
       "y": 330.767,
       "z": 0
     },
@@ -2947,6 +2947,19 @@
     "_enabled": true,
     "__prefab": {
       "__id__": 133
+    },
+    "idLabl": {
+      "__id__": 121
+    },
+    "nickNameLabel": {
+      "__id__": 127
+    },
+    "houseCardCount": {
+      "__id__": 78
+    },
+    "createRoomPrefab": {
+      "__uuid__": "0fe6dd38-16c3-4b8d-8480-538d4db63b1e",
+      "__expectedType__": "cc.Prefab"
     },
     "_id": ""
   },

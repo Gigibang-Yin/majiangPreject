@@ -18,19 +18,27 @@ export class login extends Component {
         console.log("微信");
         break;
       case "test1":
-        globalMgr.MessageMgr.senLoginMsg(1)
+        globalMgr.MessageMgr.senLoginMsg(10000).then((result:any) => {
+          console.log('promise回调回来的参数是：',result)
+            globalMgr.userData._id = result.id
+            globalMgr.userData._houseCardCount = result.houseCardCount
+            globalMgr.userData._nickName = result.nickName
+            this.node.parent.emit('loginToMain')
+        }).catch((err)=>{
+          console.log(err)
+        })
         console.log("test1");
         break;
       case "test2":
-        globalMgr.MessageMgr.senLoginMsg(2)
+        globalMgr.MessageMgr.senLoginMsg(10001)
         console.log("test2");
         break;
       case "test3":
-        globalMgr.MessageMgr.senLoginMsg(3)
+        globalMgr.MessageMgr.senLoginMsg(10002)
         console.log("test3");
         break;
       case "test4":
-        globalMgr.MessageMgr.senLoginMsg(4)
+        globalMgr.MessageMgr.senLoginMsg(10003)
         console.log("test4");
         break;
     }

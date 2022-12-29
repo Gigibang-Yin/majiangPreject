@@ -141,7 +141,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 360.00000000000006,
+    "_orthoHeight": 380.7751937984496,
     "_near": 0,
     "_far": 2000,
     "_color": {
@@ -249,6 +249,11 @@
       "__uuid__": "1f373f2e-5419-40f4-8e6e-2cb8f90f6de8",
       "__expectedType__": "cc.Prefab"
     },
+    "hallPrefab": {
+      "__uuid__": "bef81462-b684-47f7-b3b6-bfbfed086197",
+      "__expectedType__": "cc.Prefab"
+    },
+    "CurrentNode": null,
     "_id": "a1duOxKIhNVKT4AMuE7Fld"
   },
   {
