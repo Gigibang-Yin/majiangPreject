@@ -20,11 +20,10 @@ class MessageMgr {
               let type = message.type
               let messageData = message.data
               self.rspMessage(type,messageData)
-              ws.close()
             }
         
             ws.onclose = function (evt) {
-              console.log("Connection closed.")
+              console.log("Connection closed.",evt)
             }
             
             ws.onerror = function() {
@@ -51,6 +50,19 @@ class MessageMgr {
             })
         })
     }
+    sendCreateRootMessage(roomData) {
+        return new Promise((reslove,reject) => {
+            this.sendMsg('create_room', roomData, (result) => {
+                if(result.err) {
+                    console.log('reject')
+                    reject(result.err)
+                } else {
+                    console.log('reslove')
+                    reslove(result)
+                }
+            })
+        })
+    }
     sendMsg (type: string, data, callback) {
         let tempData = {
             type: type,
@@ -59,5 +71,6 @@ class MessageMgr {
         this._callBackMap[type] = callback
         this._ws.send(JSON.stringify(tempData))
     }
+
 }
 export default MessageMgr

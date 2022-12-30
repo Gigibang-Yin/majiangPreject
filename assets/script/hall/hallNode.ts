@@ -19,7 +19,6 @@ export class hallNode extends Component {
 
   update(deltaTime: number) {}
   init() {
-    console.log("这不是在初始化");
     this.idLabl.string = "ID:" + globalMgr.userData._id;
     this.nickNameLabel.string = "" + globalMgr.userData._nickName;
     this.houseCardCount.string = "" + globalMgr.userData._houseCardCount;
